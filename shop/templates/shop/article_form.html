@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+<div class="container p-5">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-dark" type="submit">
+            {% if 'update' in request.path %}
+            Update product
+            {% else %}
+            Add product
+            {% endif %}
+        </button>
+    </form>
+</div>
+{% endblock main %}
+

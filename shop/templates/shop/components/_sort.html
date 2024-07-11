@@ -1,0 +1,12 @@
+{% load shop_tags %}
+<div class="col mt-5">
+    <div class="list-group">
+        <a href="{% url 'index' %}" class="list-group-item list-group-item-action border-dark bg-dark text-light" aria-current="true">
+            Sorter
+        </a>
+        {% get_sorters as sorters %}
+        {% for key, value in sorters.items %}
+        <a href="?sort={{ key }}" class="list-group-item list-group-item-action border-dark bg-dark text-light">{{ value }}</a>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="col">
+    <div class="card border-dark bg-dark text-light">
+        <div class="card-header d-flex justify-content-between bg-dark text-white">
+            <div>Category: {{ article.category }}</div>
+            <div>Views: {{ article.views }}</div>
+        </div>
+
+        <a href="{% url 'article' article.pk %}">
+            <img src="{{ article.get_photo }}" class="card-img-top" alt="...">
+        </a>
+
+        <div class="card-body">
+            <h5 class="card-title text-center">{{ article.title }}</h5>
+            <p class="card-text">{{ article.content|truncatewords:25 }}</p>
+        </div>
+        <div class="card-footer bg-dark text-white">
+            <div class="d-flex justify-content-between">
+                Date time: {{ article.created_at }}
+                Price: {{ article.price }}$
+            </div>
+        </div>
+    </div>
+</div>
